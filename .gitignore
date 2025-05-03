@@ -1,0 +1,21 @@
+# Arquivos do sistema operacional
+Thumbs.db          # Windows
+desktop.ini        # Windows
+
+# Arquivos de IDE/Editor
+.idea/             # JetBrains (WebStorm, PHPStorm)
+.vscode/           # VS Code
+*.swp              # Arquivos temporários do Vim
+
+# Dependências do Node (se usar npm ou ferramentas de build)
+node_modules/
+package-lock.json
+
+# Arquivos de ambiente (senhas, chaves API)
+.env
+.env.local
+.env*.local
+
+# Cache e arquivos gerados automaticamente
+.sass-cache/
+*.log
