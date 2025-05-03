@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Focus</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🍅 Tenha Brio</div>
+  </header>
+
+  <main class="layout">
+    <!-- Sessão de Foco -->
+    <section id="sessao-foco">
+      <h1 class="titulo">Sessão de Foco</h1>
+      <p class="subtitulo">Cronômetro Pomodoro para melhorar sua produtividade diária.</p>
+
+      <div class="timer">
+        <div class="ponteiro">25:00</div>
+      </div>
+
+      <label for="quantidade-pomodoros">Quantidade de Pomodoros:</label>
+      <input type="number" id="quantidade-pomodoros" placeholder="Ex: 4" min="1" required>
+
+      <p id="mensagem-foco" class="mensagem" style="display: none;">Hora de focar! Concentre-se na sua tarefa.</p>
+      <p id="mensagem-intervalo" class="mensagem" style="display: none;">Hora de descansar! Aproveite o intervalo.</p>
+      <p id="mensagem-final" class="mensagem" style="display: none;">Todos os ciclos foram concluídos! Parabéns!</p>
+
+      <p class="info">Ciclos completados: 0</p>
+
+      <div class="botoes">
+        <button class="btn btn-iniciar">Iniciar</button>
+        <button class="btn btn-resetar">Desistir</button>
+      </div>
+    </section>
+
+    <!-- Configurações -->
+    <section id="configuracoes">
+      <h1 class="titulo">Configurações</h1>
+      <p class="subtitulo">Ajuste os tempos do Pomodoro e da pausa.</p>
+
+      <form id="form-configuracoes">
+        <label for="tempo-pomodoro">Tempo do Pomodoro (minutos):</label>
+        <input type="number" id="tempo-pomodoro" placeholder="Ex: 25" min="1" required>
+
+        <label for="tempo-pausa">Tempo da Pausa (minutos):</label>
+        <input type="number" id="tempo-pausa" placeholder="Ex: 5" min="1" required>
+
+        <button type="submit" class="btn">Salvar Configurações</button>
+      </form>
+    </section>
+
+    <!-- Produtividade Semanal -->
+    <section id="grafico-semana">
+      <h1 class="titulo">Produtividade Semanal</h1>
+      <p class="subtitulo">Veja como está sua produtividade durante a semana.</p>
+      <div class="grafico-container">
+        <div class="eixo-y">
+          <span>5h</span>
+          <span>4h</span>
+          <span>3h</span>
+          <span>2h</span>
+          <span>1h</span>
+          <span>0h</span>
+        </div>
+        <div class="grafico">
+          <div class="barra" data-dia="Segunda">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Seg</span>
+          </div>
+          <div class="barra" data-dia="Terça">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Ter</span>
+          </div>
+          <div class="barra" data-dia="Quarta">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Qua</span>
+          </div>
+          <div class="barra" data-dia="Quinta">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Qui</span>
+          </div>
+          <div class="barra" data-dia="Sexta">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Sex</span>
+          </div>
+          <div class="barra" data-dia="Sábado">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Sáb</span>
+          </div>
+          <div class="barra" data-dia="Domingo">
+            <div class="preenchimento" style="height: 0;"></div>
+            <span>Dom</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/timer.js"></script>
+  <script src="../js/configuracoes.js"></script>
+</body>
+</html>

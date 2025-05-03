@@ -1,0 +1,354 @@
+:root {
+  --cor-fundo: #000000;
+  --cor-texto: #ffffff;
+  --cor-primaria: #4eaaff;
+  --cor-secundaria: #aaaaaa;
+  --cor-hover: #3399dd;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    text-align: center;
+  }
+  
+  /* Estilo para o cabeçalho */
+  header {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #1a1a1a;
+    padding: 10px 0; /* Reduz a altura do cabeçalho */
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+    color: #ffffff;
+    border-bottom: 2px solid #4eaaff; /* Linha inferior para destaque */
+  }
+  
+  /* Estilo para o logo e frase */
+  .logo {
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre o ícone e o texto */
+  }
+  
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    color: var(--cor-primaria);
+  }
+  
+  main {
+    margin-top: 20px; /* Reduzido de 80px para 20px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* Altura total da tela menos o header */
+    text-align: center;
+  }
+  
+  .titulo {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4eaaff;
+  }
+  
+  .subtitulo {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 40px;
+  }
+  
+  .timer {
+    width: 100%; /* Largura total */
+    height: 150px; /* Altura fixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #111111;
+    border: 5px solid #4eaaff;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Espaçamento abaixo do cronômetro */
+  }
+
+  .timer.ativo {
+    border-color: green;
+  }
+  
+  .timer.pausado {
+    border-color: orange;
+  }
+  
+  .info {
+    margin-top: 30px;
+    color: #aaaaaa;
+  }
+  
+  .botoes {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: var(--cor-hover);
+  }
+
+  .btn:focus,
+  nav a:focus {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
+  }
+
+  .btn,
+  nav a {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+/* Estilizar o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px; /* Limitar a largura do formulário */
+}
+
+form label {
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-align: left; /* Alinhar os textos dos labels à esquerda */
+}
+
+form input {
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+form button {
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #4eaaff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #3399dd;
+}
+
+/* Estilo para o campo de quantidade de Pomodoros */
+#quantidade-pomodoros {
+  width: 60px; /* Define uma largura menor */
+  text-align: center; /* Centraliza o texto dentro do campo */
+  font-size: 1rem; /* Ajusta o tamanho da fonte */
+  margin: 10px 0; /* Espaçamento acima e abaixo */
+  padding: 5px; /* Reduz o espaçamento interno */
+  border: 1px solid #333333;
+  border-radius: 5px;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+/* Estilo para o layout principal */
+.layout {
+  display: flex;
+  justify-content: space-between; /* Espaça as seções horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: calc(100vh - 100px); /* Altura total da tela menos o header */
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden; /* Evita rolagem */
+}
+
+/* Configurações no lado direito */
+#configuracoes {
+  flex: 1; /* Ocupa menos espaço */
+  max-width: 250px; /* Limita a largura */
+  background-color: #111111;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem; /* Fonte menor */
+}
+
+#configuracoes h1,
+#configuracoes p {
+  text-align: left;
+  font-size: 1rem; /* Fonte menor */
+}
+
+/* Sessão de Foco centralizada */
+#sessao-foco {
+  background-color: #1a1a1a; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  max-width: 600px; /* Largura máxima */
+  margin: 20px auto; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o conteúdo */
+}
+
+#sessao-foco h1,
+#sessao-foco p {
+  text-align: center;
+}
+
+/* Estilo para o número de Pomodoros restantes dentro do cronômetro */
+.pomodoros-restantes {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Estilo para o número de Pomodoros restantes */
+.pomodoros-restantes {
+  margin-top: 10px; /* Espaçamento entre o cronômetro e o texto */
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilo para as mensagens */
+.mensagem {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #cccccc;
+  text-align: center;
+}
+
+/* Estilo para o gráfico de produtividade semanal */
+#grafico-semana {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Container do gráfico com eixo Y */
+.grafico-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Estilo para o eixo Y */
+.eixo-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px; /* Altura do gráfico */
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.eixo-y span {
+  display: block;
+}
+
+/* Estilo para o gráfico */
+.grafico {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px; /* Altura do gráfico */
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+}
+
+.barra .preenchimento {
+  width: 100%;
+  background-color: #4eaaff;
+  border-radius: 4px;
+  transition: height 0.3s ease;
+}
+
+.barra span {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .layout {
+    flex-direction: column; /* Empilha as seções em telas menores */
+    align-items: center;
+  }
+
+  #configuracoes,
+  #sessao-foco {
+    max-width: 100%;
+  }
+
+  .timer {
+    width: 150px;
+    height: 150px;
+    font-size: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+}
